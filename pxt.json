@@ -1,5 +1,6 @@
 {
     "name": "SPODER MAN beta.mls",
+    "version": "0.1.0",
     "description": "",
     "dependencies": {
         "device": "*"
