@@ -1,5 +1,5 @@
 {
-    "name": "SPODER MAN",
+    "name": "SPODER MAN beta.mls",
     "description": "",
     "dependencies": {
         "device": "*"
@@ -9,7 +9,9 @@
         "main.ts",
         "README.md",
         "images.g.jres",
-        "images.g.ts"
+        "images.g.ts",
+        "tilemap.g.jres",
+        "tilemap.g.ts"
     ],
     "testFiles": [
         "test.ts"

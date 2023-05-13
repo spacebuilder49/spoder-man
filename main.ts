@@ -6,6 +6,11 @@ enum SpriteKindLegacy {
     platform,
     fuel
 }
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    game.showLongText("secret unloked good job by jake", DialogLayout.Bottom)
+    info.changeScoreBy(1000000)
+    scene.setBackgroundImage(assets.image`game title`)
+})
 sprites.onOverlap(SpriteKindLegacy.Player, SpriteKindLegacy.Enemy, function (sprite, otherSprite) {
     gameover = 1
     game.over(false)
@@ -962,17 +967,6 @@ forever(function () {
     }
 })
 forever(function () {
-    platform2.setPosition(platform.x + 31, platform.y)
-    platform4.setPosition(platform3.x + 31, platform3.y)
-    platform6.setPosition(platform5.x + 31, platform5.y)
-    platform8.setPosition(platform7.x + 31, platform7.y)
-    platform.x += -1
-    platform3.x += -1
-    platform5.x += -1
-    platform7.x += -1
-    pause(10)
-})
-forever(function () {
     if (platform.x < -50) {
         platform.x = 172
     }
@@ -985,4 +979,15 @@ forever(function () {
     if (platform7.x < -50) {
         platform7.x = 172
     }
+})
+forever(function () {
+    platform2.setPosition(platform.x + 31, platform.y)
+    platform4.setPosition(platform3.x + 31, platform3.y)
+    platform6.setPosition(platform5.x + 31, platform5.y)
+    platform8.setPosition(platform7.x + 31, platform7.y)
+    platform.x += -1
+    platform3.x += -1
+    platform5.x += -1
+    platform7.x += -1
+    pause(10)
 })
