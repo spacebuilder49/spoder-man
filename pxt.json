@@ -1,9 +1,10 @@
 {
-    "name": "SPODER MAN beta.mls",
+    "name": "spoderman 2",
     "version": "0.1.0",
     "description": "",
     "dependencies": {
-        "device": "*"
+        "device": "*",
+        "controller": "*"
     },
     "files": [
         "main.blocks",
