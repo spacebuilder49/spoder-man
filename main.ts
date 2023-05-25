@@ -15,6 +15,13 @@ sprites.onOverlap(SpriteKindLegacy.Player, SpriteKindLegacy.Enemy, function (spr
     gameover = 1
     game.over(false)
 })
+controller.menu.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (game.askForString("play game=yes") > game.askForString("leave game=no")) {
+        info.setScore(10000000)
+    } else {
+        game.gameOver(false)
+    }
+})
 sprites.onOverlap(SpriteKindLegacy.Player, SpriteKindLegacy.platform, function (sprite, otherSprite) {
     ground = 1
 })
@@ -26,7 +33,7 @@ music.setVolume(255)
 gameover = 0
 music.magicWand.play()
 scene.setBackgroundImage(assets.image`game title`)
-game.showLongText("Press A to Start. Avoid missiles, asteroids and electric things. Use  DPad and A to jetpack.", DialogLayout.Bottom)
+game.showLongText("spoderman", DialogLayout.Bottom)
 info.setScore(0)
 let fuel = 100
 ground = 0
@@ -661,18 +668,118 @@ forever(function () {
     if (gameover == 0) {
         if (ground == 0) {
             music.playTone(698, music.beat(BeatFraction.Sixteenth))
-            mySprite2.setImage(assets.image`spooder man`)
+            mySprite2.setImage(img`
+                ..............ffffffff..
+                .............f222222f2f.
+                ..........fff222f22f22ff
+                ..........f2f22222222f2f
+                ..........f222f22222ff2f
+                .........ff222fffffff2ff
+                ........ff222222f222fff.
+                ........ff222222222f....
+                ........f222222ff2ff....
+                ........ffffff2ff2ff....
+                .......ff88f2fffff2ff..f
+                .......f888f222ff22ffff8
+                .....ffff88f222ff22fff88
+                .....fff888f22f22f22f888
+                .fffff88888fff222ff2f888
+                .f88888888ff2222222fffff
+                ..f88888ff2222fffffff...
+                ...fffff2222fffff22f....
+                .....f2f222ff...f2f.....
+                ....ff2222f....ff2f.....
+                ..fff2222ff....f22f.....
+                ..f222222f.....f22f.....
+                ..f222222f.....f22fff...
+                ..f2222fff.....f2222ff..
+                `)
             pause(10)
             music.playTone(784, music.beat(BeatFraction.Sixteenth))
-            mySprite2.setImage(assets.image`spooder man`)
+            mySprite2.setImage(img`
+                ..............ffffffff..
+                .............f222222f2f.
+                ..........fff222f22f22ff
+                ..........f2f22222222f2f
+                ..........f222f22222ff2f
+                .........ff222fffffff2ff
+                ........ff222222f222fff.
+                ........ff222222222f....
+                ........f222222ff2ff....
+                ........ffffff2ff2ff....
+                .......ff88f2fffff2ff..f
+                .......f888f222ff22ffff8
+                .....ffff88f222ff22fff88
+                .....fff888f22f22f22f888
+                .fffff88888fff222ff2f888
+                .f88888888ff2222222fffff
+                ..f88888ff2222fffffff...
+                ...fffff2222fffff22f....
+                .....f2f222ff...f2f.....
+                ....ff2222f....ff2f.....
+                ..fff2222ff....f22f.....
+                ..f222222f.....f22f.....
+                ..f222222f.....f22fff...
+                ..f2222fff.....f2222ff..
+                `)
             pause(10)
         } else {
             music.playTone(349, music.beat(BeatFraction.Quarter))
-            mySprite2.setImage(assets.image`spooder man`)
+            mySprite2.setImage(img`
+                ..............ffffffff..
+                .............f222222f2f.
+                ..........fff222f22f22ff
+                ..........f2f22222222f2f
+                ..........f222f22222ff2f
+                .........ff222fffffff2ff
+                ........ff222222f222fff.
+                ........ff222222222f....
+                ........f222222ff2ff....
+                ........ffffff2ff2ff....
+                .......ff88f2fffff2ff..f
+                .......f888f222ff22ffff8
+                .....ffff88f222ff22fff88
+                .....fff888f22f22f22f888
+                .fffff88888fff222ff2f888
+                .f88888888ff2222222fffff
+                ..f88888ff2222fffffff...
+                ...fffff2222fffff22f....
+                .....f2f222ff...f2f.....
+                ....ff2222f....ff2f.....
+                ..fff2222ff....f22f.....
+                ..f222222f.....f22f.....
+                ..f222222f.....f22fff...
+                ..f2222fff.....f2222ff..
+                `)
             fuel += 10
             pause(150)
             music.playTone(392, music.beat(BeatFraction.Quarter))
-            mySprite2.setImage(assets.image`spooder man`)
+            mySprite2.setImage(img`
+                ..............ffffffff..
+                .............f222222f2f.
+                ..........fff222f22f22ff
+                ..........f2f22222222f2f
+                ..........f222f22222ff2f
+                .........ff222fffffff2ff
+                ........ff222222f222fff.
+                ........ff222222222f....
+                ........f222222ff2ff....
+                ........ffffff2ff2ff....
+                .......ff88f2fffff2ff..f
+                .......f888f222ff22ffff8
+                .....ffff88f222ff22fff88
+                .....fff888f22f22f22f888
+                .fffff88888fff222ff2f888
+                .f88888888ff2222222fffff
+                ..f88888ff2222fffffff...
+                ...fffff2222fffff22f....
+                .....f2f222ff...f2f.....
+                ....ff2222f....ff2f.....
+                ..fff2222ff....f22f.....
+                ..f222222f.....f22f.....
+                ..f222222f.....f22fff...
+                ..f2222fff.....f2222ff..
+                `)
             pause(150)
         }
     }
